@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="quiz_Main">
+		<div class="quiz_header">
+			Welcome Rusmeen Khan!!
+		</div>
+		<div class="progress">
+		    <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" id="progressBar"></div>
+		</div>
+		<div class="quiz_body">
+			<div id="Question">
+			</div>
+			<div class="buttons">
+				<button class="btn prev" id="prevButton" onclick="prevQuestion()">Previous </button>
+				<button class="btn" id="nextButton" onclick="nextQuestion()"> Next </button>
+			</div>
+			
+		</div>
+		<div class="result" id="result"></div>
+	</div>
+	<script type="text/javascript" src="style.js"></script>
+</body>
+</html>

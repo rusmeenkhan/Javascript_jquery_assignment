@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.image{
+			display: none;
+			width: 500px;
+			height: 500px;
+		}
+		.active{
+			display: block;
+		}
+		
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+		  <div class="container offset-3 mt-5" id="slides">
+			<img src="https://cdn.pixabay.com/photo/2017/05/12/08/29/coffee-2306471__340.jpg" class="image active">
+			<img src="https://images.unsplash.com/photo-1561047029-3000c68339ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" class="image">
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkBP3ElPyYr4M6T3BoI0b2Lbe9YBrdpbW7hmvxfvrF8Xm4lZr-Qw&s" class="image">
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKe7ry4l3RC8_4vOU8e1uyQdNBL7FocQ4UjevPFmY2ky6gE-J_&s" class="image">
+	      </div>
+		  <div class="buttons mt-3 offset-4">
+		    <button class="controls btn-primary" id="previous">previous</button>
+
+		    <button class="controls btn-warning" id="pause">Pause</button>
+
+		    <button class="controls btn-danger" id="next">next</button>
+		  </div>
+
+
+		<script type="text/javascript">
+				
+
+				var slides = document.querySelectorAll('.image');
+				var currentSlide = 0;
+				var slideInterval = setInterval(nextSlide,2000);
+
+				function nextSlide(){
+				    goToSlide(currentSlide+1);
+				}
+
+				function previousSlide(){
+				    goToSlide(currentSlide-1);
+				}
+
+				function goToSlide(n){
+				    slides[currentSlide].className = 'image';
+				    currentSlide = (n+slides.length)%slides.length;
+				    slides[currentSlide].className = 'image active';
+				}
+
+
+				var playing = true;
+				var pauseButton = document.getElementById('pause');
+
+				function pauseSlideshow(){
+				    pauseButton.innerHTML = 'Play'; // play character
+				    pauseButton.className="controls btn-info";
+				    playing = false;
+				    clearInterval(slideInterval);
+				}
+
+				function playSlideshow(){
+				    pauseButton.innerHTML = 'Pause'; // pause character
+				    pauseButton.className="controls btn-warning";
+				    playing = true;
+				    slideInterval = setInterval(nextSlide,2000);
+				}
+
+				pauseButton.onclick = function(){
+				    if(playing){ pauseSlideshow(); }
+				    else{ playSlideshow(); }
+				};
+
+				var next = document.getElementById('next');
+				var previous = document.getElementById('previous');
+
+				next.onclick = function(){
+				    //pauseSlideshow();
+				    nextSlide();
+				};
+				previous.onclick = function(){
+				    //pauseSlideshow();
+				    previousSlide();
+				};
+
+
+		</script>
+</body>
+</html>

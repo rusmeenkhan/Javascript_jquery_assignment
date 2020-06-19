@@ -1,0 +1,9 @@
+		fieldset{
+          border: 1px solid #bebebe;
+          padding: 10px;
+          margin: 10px;
+        }
+        legend{
+            width: inherit;
+            color: #bebebe;
+        }

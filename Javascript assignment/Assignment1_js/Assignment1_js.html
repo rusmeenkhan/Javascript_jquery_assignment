@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <script type="text/javascript" src="style.js"></script>
+</head>
+<body>
+    <div class="jumbotron">
+      <form action="#" method="post" name="myForm" ">
+        <fieldset>
+          <legend>Personal Information</legend>
+          
+          <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="fname"  class="form-control">
+          </div>
+          <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="Email"  class="form-control">
+          </div>
+          <div class="form-group">
+                <label>Country</label>
+                <input list="Countries" name="Country" class="form-control" >
+                <datalist id="Countries">
+                  <option value="India">
+                  <option value="USA">
+                  <option value="UK">
+                  <option value="Singapore">
+                  <option value="NZ">
+                </datalist>
+          </option>
+
+            <fieldset>
+              <legend> Contact details</legend>
+                  <div class="form-group">
+                      <label>Name</label>
+                      <input type="text" name="name"  class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                      <label>Email</label>
+                      <input type="email" name="email" class="form-control">
+                  </div>
+                  <div class="" id="newDiv">
+                  </div>
+                  <button type="button" class="btn btn-primary mt-3" onclick="addNewDiv()">Add Contact</button>
+            </fieldset>
+
+            <div class="form-grounewDivp">
+                  <label>Mobile No.</label>
+                  <input type="number" name="Mobile" class="form-control"  >
+            </div>
+
+            <div class="form-group">
+                  <label>Age</label>
+                  <input type="number" name="Age" class="form-control">
+            </div>
+             <div class="form-group">
+                  <label>Voter_ID</label>
+                  <input type="text" name="Voter" class="form-control">
+            </div>
+          
+            <button class="btn btn-success mt-3" onclick="return validateForm()">Submit</button>
+        </fieldset>
+      </form>
+
+    </div>
+</body>
+</html>
